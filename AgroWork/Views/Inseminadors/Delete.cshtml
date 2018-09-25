@@ -1,0 +1,57 @@
+﻿@model AgroWork.Models.Inseminador
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Deletar</h2>
+
+<h3>Você tem certeza que deseja deletar?</h3>
+<div>
+    <h4>Inseminador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Carro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carro)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-default" /> &nbsp;
+        <a asp-action="Index" class="btn btn-default">Voltar</a>
+    </form>
+</div>

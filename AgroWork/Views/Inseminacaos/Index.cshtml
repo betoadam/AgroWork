@@ -1,0 +1,77 @@
+﻿@model IEnumerable<AgroWork.Models.Inseminacao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Página Inseminações</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-default">Criar um Novo</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Nome do Produtor: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />&nbsp;
+            <input type="submit" value="Pesquisar" class="btn btn-default" /> &nbsp;
+            <a asp-action="Index" class="btn btn-default">Limpar</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.Data)</a>
+            </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Touro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inseminador)
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Produtor)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vaca)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Touro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inseminador.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produtor.Nome)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vaca.Nome)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-default">Editar</a> &nbsp;
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-default">Detalhes</a> &nbsp;
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-default">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

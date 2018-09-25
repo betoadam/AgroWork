@@ -1,0 +1,54 @@
+﻿@model AgroWork.Models.Vaca
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Vaca</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Raca)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Raca)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Idade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Idade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produtor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produtor.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default" >Editar</a> &nbsp;
+    <a asp-action="Index" class="btn btn-default" >Voltar</a>
+</div>
